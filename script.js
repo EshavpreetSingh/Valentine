@@ -1,19 +1,39 @@
 const nameScreen = document.getElementById("nameScreen");
 const cardScreen = document.getElementById("cardScreen");
 const valText = document.getElementById("valText");
+
+const yesBtn = document.getElementById("yesBtn");
 const noBtn = document.getElementById("noBtn");
+
+const bgMusic = document.getElementById("bgMusic");
+const heartbeat = document.getElementById("heartbeat");
+
 const canvas = document.getElementById("confetti");
 const ctx = canvas.getContext("2d");
 
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
+/* ▶ Start Card + Music */
 function startCard() {
     const name = document.getElementById("nameInput").value || "You";
     valText.innerHTML = `${name}, will you be my<br>valentine? 💖`;
     nameScreen.classList.add("hidden");
     cardScreen.classList.remove("hidden");
+
+    bgMusic.volume = 0.5;
+    bgMusic.play();
 }
+
+/* 💓 Heartbeat on hover */
+function playHeartbeat() {
+    heartbeat.currentTime = 0;
+    heartbeat.volume = 0.8;
+    heartbeat.play();
+}
+
+yesBtn.addEventListener("mouseenter", playHeartbeat);
+noBtn.addEventListener("mouseenter", playHeartbeat);
 
 /* 😈 No button runs away */
 noBtn.addEventListener("mouseover", () => {
@@ -26,12 +46,13 @@ noBtn.addEventListener("mouseover", () => {
 let particles = [];
 
 function yesClicked() {
-    for (let i = 0; i < 150; i++) {
+    bgMusic.volume = 0.8;
+
+    for (let i = 0; i < 160; i++) {
         particles.push({
             x: Math.random() * canvas.width,
             y: canvas.height,
             r: Math.random() * 6 + 4,
-            d: Math.random() * 20,
             color: `hsl(${Math.random() * 360},100%,60%)`
         });
     }

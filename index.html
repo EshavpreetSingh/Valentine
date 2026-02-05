@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Valentine 💖</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Name Screen -->
+<div class="phone" id="nameScreen">
+    <h2>Enter your name 💕</h2>
+    <input type="text" id="nameInput" placeholder="Your name">
+    <button class="yes-btn" onclick="startCard()">Continue ❤️</button>
+</div>
+
+<!-- Valentine Card -->
+<div class="phone hidden" id="cardScreen">
+    <div class="card">
+        <div class="emoji">😊❤️</div>
+        <h2 id="valText"></h2>
+
+        <button class="yes-btn" onclick="yesClicked()">Yes ❤️</button>
+        <button class="no-btn" id="noBtn">No 😬</button>
+
+        <p class="note">You can't say no 😈</p>
+    </div>
+</div>
+
+<!-- Confetti canvas -->
+<canvas id="confetti"></canvas>
+
+<script src="script.js"></script>
+</body>
+</html>

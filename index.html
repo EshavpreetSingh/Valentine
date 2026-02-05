@@ -20,14 +20,23 @@
         <div class="emoji">😊❤️</div>
         <h2 id="valText"></h2>
 
-        <button class="yes-btn" onclick="yesClicked()">Yes ❤️</button>
+        <button class="yes-btn" id="yesBtn" onclick="yesClicked()">Yes ❤️</button>
         <button class="no-btn" id="noBtn">No 😬</button>
 
-        <p class="note">You can't say no 😈</p>
+        <p class="note">You can't escape 😈</p>
     </div>
 </div>
 
-<!-- Confetti canvas -->
+<!-- Audio -->
+<audio id="bgMusic" loop>
+    <source src="romantic.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="heartbeat">
+    <source src="heartbeat.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Confetti -->
 <canvas id="confetti"></canvas>
 
 <script src="script.js"></script>
